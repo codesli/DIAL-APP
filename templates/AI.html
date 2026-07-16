@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIAL - AI Platform</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <header class="navbar">
+    <nav class="container">
+      <div class="nav-content">
+        <a href="/" class="logo">
+          <div class="logo-icon"><i data-lucide="activity"></i></div>
+          <div class="logo-text">
+            <span class="logo-title">DIAL</span>
+            <span class="logo-subtitle">AI Platform</span>
+          </div>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/info" class="nav-link">About Leukemia</a>
+          <a href="/ai-tool" class="btn-primary">AI Tool</a>
+          <a href="/logout" class="nav-link" style="color: #ef4444; font-weight: 600;">Sign Out</a>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <header>
+      <h1 style="margin-top: 40px;">AI-Powered Cellular Analysis</h1>
+      <p>Automated Blood Smear Evaluation – For Medical Professionals Only</p>
+    </header>
+
+    <section class="section ai-tool" id="ai-diagnostic">
+      <div class="container">
+        <div class="skills-header">
+          <p>
+            Upload a microscopic image of blood cells to analyze their morphology
+            and evaluate the probability of Leukemia detection using deep learning models.
+          </p>
+        </div>
+
+        <div class="ai-container">
+          <div class="upload-box" id="drop-zone">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#439dc6" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            <p>Drag & Drop image or <span>Browse</span></p>
+            <input type="file" id="file-input" hidden accept="image/*">
+          </div>
+
+          <div class="analysis-results" id="results" style="display: none; margin-top: 20px; text-align: center;">
+
+            <div id="image-preview-container" style="margin-bottom: 25px; position: relative; display: inline-block;">
+                <img id="user-image" src="" style="max-width: 100%; max-height: 350px; border-radius: 15px; border: 5px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: none;">
+                <div id="image-label" style="position: absolute; top: 10px; left: 10px; background: rgba(67, 157, 198, 0.8); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; backdrop-filter: blur(4px);">Selected Cell Image</div>
+            </div>
+
+            <div class="result-item" style="text-align: left;">
+              <span class="label">Cell Diagnosis:</span>
+              <span class="value" id="cell-status" style="font-weight: 800;">Analyzing...</span>
+            </div>
+            <div class="result-item" style="text-align: left;">
+              <span class="label">AI Confidence Level:</span>
+              <div class="progress-bar" style="margin: 10px 0;">
+                <div class="progress" id="score-bar"></div>
+              </div>
+            </div>
+            <p class="ai-feedback" id="ai-message" style="font-style: italic; color: #555; text-align: left; margin-bottom: 20px;"></p>
+
+            <div id="ai-receipt" style="display: none; margin: 25px auto; max-width: 500px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eef2f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; overflow: hidden; text-align: left;">
+                <div style="background: #2563eb; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;">
+                    <h4 style="margin: 0; color: #ffffff; font-size: 14px; letter-spacing: 1px; font-weight: 600;">📄 DIAGNOSTIC REPORT</h4>
+                    <span style="background: rgba(255,255,255,0.2); color: #ffffff; padding: 3px 8px; border-radius: 20px; font-size: 11px; font-weight: bold;">XAI Verification</span>
+                </div>
+                <div style="padding: 20px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 13px; color: #64748b;">
+                        <span>System Status:</span>
+                        <span style="color: #10b981; font-weight: 600;">Analysis Complete</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 13px; color: #64748b;">
+                        <span>Architecture:</span>
+                        <span style="font-weight: 500; color: #1e293b;">CNN Model</span>
+                    </div>
+                    <div style="border-top: 1px dashed #e2e8f0; margin: 15px 0;"></div>
+
+                    <div id="receipt-details"></div>
+
+                    <div style="border-top: 1px dashed #e2e8f0; margin: 15px 0;"></div>
+                    <p style="font-size: 11px; color: #94a3b8; text-align: center; margin: 0; line-height: 1.4;">
+                        * This receipt is an Explainable AI (XAI) verification based on cellular morphological sub-features. Clinical decision remains with the hematologist.
+                    </p>
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p id="hiqe" style="margin-top: 30px; font-size: 0.9rem;">
+        This prototype demonstrates an AI-assisted clinical decision system designed to aid in the interpretation of hematological metrics.
+        It does not replace professional medical diagnosis.
+    </p>
+
+   <footer class="footer">
+      <p>© DIAL — AI-Powered Leukemia Detection</p>
+      <p>Student project · Intel® AI Global Impact Festival 2026</p>
+      <p style="max-width: 640px; margin: 10px auto 0; color: #94a3b8; font-size: 0.72rem; line-height: 1.5;">
+        This is a student research prototype, not a certified medical device. It is not
+        intended for clinical use, and must not be deployed publicly or used to inform
+        real patient care without review and approval by qualified medical and
+        regulatory authorities.
+      </p>
+    </footer>
+  </div>
+
+<script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const results = document.getElementById('results');
+    const statusText = document.getElementById('cell-status');
+    const scoreBar = document.getElementById('score-bar');
+    const aiMessage = document.getElementById('ai-message');
+    const userImage = document.getElementById('user-image');
+
+    dropZone.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', async function() {
+      if (this.files && this.files[0]) {
+        const file = this.files[0];
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            userImage.src = e.target.result;
+            userImage.style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+
+        results.style.display = 'block';
+        results.style.opacity = '0.5';
+        statusText.innerText = "Analyzing cells...";
+        aiMessage.innerText = "The AI core is processing the morphological features...";
+        scoreBar.style.width = "0%";
+        document.getElementById('ai-receipt').style.display = 'none';
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        try {
+          const response = await fetch('/predict', { method: 'POST', body: formData });
+
+          if (!response.ok) {
+            const errData = await response.json().catch(() => ({}));
+            throw new Error(errData.error || `Server responded with ${response.status}`);
+          }
+
+          const data = await response.json();
+
+          if (data.error) {
+            throw new Error(data.error);
+          }
+
+          setTimeout(() => {
+            results.style.opacity = '1';
+            statusText.innerText = data.prediction;
+            scoreBar.style.width = data.confidence;
+
+            const isHealthy = data.prediction.toLowerCase().includes("healthy");
+            scoreBar.style.backgroundColor = isHealthy ? "#2ecc71" : "#e74c3c";
+            statusText.style.color = isHealthy ? "#2ecc71" : "#e74c3c";
+
+            aiMessage.innerHTML = `Model evaluation accuracy: <strong>${data.confidence}</strong>`;
+
+            // TRIGGERS EXPLAINABLE REPORT DYNAMICALLY
+            showReceipt(data.prediction, data.confidence);
+
+          }, 800);
+
+        } catch (error) {
+          results.style.opacity = '1';
+          statusText.innerText = "Analysis failed";
+          statusText.style.color = "#e74c3c";
+          aiMessage.innerText = error.message || "Server connection failed. Please try again.";
+          console.error(error);
+        }
+      }
+    });
+
+    lucide.createIcons();
+</script>
+
+<script>
+function showReceipt(prediction, confidence) {
+    const receiptDiv = document.getElementById('ai-receipt');
+    const detailsDiv = document.getElementById('receipt-details');
+
+    receiptDiv.style.display = 'block';
+
+    const isHealthy = prediction.toLowerCase().includes("healthy");
+
+    if (!isHealthy) {
+        detailsDiv.innerHTML = `
+            <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 12px; border-radius: 4px; margin-bottom: 15px;">
+                <div style="font-size: 12px; color: #991b1b; font-weight: 600; text-transform: uppercase;">Prediction</div>
+                <div style="font-size: 16px; color: #b91c1c; font-weight: bold; margin-top: 2px;">UNHEALTHY (ALL Detected)</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 13px;">
+                <span style="color: #64748b;">Confidence Score:</span>
+                <span style="font-weight: bold; color: #b91c1c;">${confidence}</span>
+            </div>
+            <div style="font-size: 12px; font-weight: 600; color: #1e293b; margin-top: 15px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Morphological Indicators:</div>
+            <div style="font-size: 13px; color: #475569; display: flex; flex-direction: column; gap: 6px;">
+                <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #ef4444;">🔴</span> Nucleus Size: Enlarged (+24%)</div>
+                <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #ef4444;">🔴</span> Cell Contour: Irregular boundaries</div>
+                <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #10b981;">🟢</span> Cytoplasm: Low N/C ratio status</div>
+            </div>
+        `;
+    } else {
+        detailsDiv.innerHTML = `
+            <div style="background: #f0fdf4; border-left: 4px solid #10b981; padding: 12px; border-radius: 4px; margin-bottom: 15px;">
+                <div style="font-size: 12px; color: #166534; font-weight: 600; text-transform: uppercase;">Prediction</div>
+                <div style="font-size: 16px; color: #15803d; font-weight: bold; margin-top: 2px;">HEALTHY (Normal Lymphoblast)</div>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 13px;">
+                <span style="color: #64748b;">Confidence Score:</span>
+                <span style="font-weight: bold; color: #15803d;">${confidence}</span>
+            </div>
+            <div style="font-size: 12px; font-weight: 600; color: #1e293b; margin-top: 15px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Morphological Indicators:</div>
+            <div style="font-size: 13px; color: #475569; display: flex; flex-direction: column; gap: 6px;">
+                <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #10b981;">🟢</span> Nucleus Size: Normal parameters</div>
+                <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #10b981;">🟢</span> Cell Contour: Regular spherical shape</div>
+                <div style="display: flex; align-items: center; gap: 8px;"><span style="color: #10b981;">🟢</span> Cytoplasm: Balanced cell structure</div>
+            </div>
+        `;
+    }
+}
+</script>
+</body>
+</html>

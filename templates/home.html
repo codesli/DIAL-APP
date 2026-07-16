@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIAL - AI-Powered Leukemia Detection</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <header class="navbar">
+    <nav class="container">
+      <div class="nav-content">
+        <a href="/" class="logo">
+          <div class="logo-icon"><i data-lucide="activity"></i></div>
+          <div class="logo-text">
+            <span class="logo-title">DIAL</span>
+            <span class="logo-subtitle">AI Platform</span>
+          </div>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+          <a href="/" class="nav-link active">Home</a>
+          <a href="/info" class="nav-link">About Leukemia</a>
+          <a href="/ai-tool" class="btn-primary">AI Tool</a>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="badge">
+            <i data-lucide="sparkles"></i>
+            <span>AI-Powered Detection</span>
+          </div>
+
+          <h1 class="hero-title">
+            Detecting
+            <span class="hero-highlight">leukemic cells</span>
+            with AI
+          </h1>
+
+          <p class="hero-description">
+            DIAL is a machine learning platform built to identify Acute Lymphoblastic
+            Leukemia (ALL) cells from microscopic blood smear images. The goal is to
+            speed up preliminary screening and support faster, more informed clinical
+            decisions — always alongside, never in place of, a qualified hematologist.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="/ai-tool" class="btn-gradient">
+              <i data-lucide="microscope"></i>
+              Try AI Detection
+              <i data-lucide="arrow-right"></i>
+            </a>
+            <a href="/info" class="btn-secondary">
+              <i data-lucide="book-open"></i>
+              Learn More
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1614308457932-e16d85c5d053?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaWNyb3Njb3BlJTIwbGFib3JhdG9yeSUyMHJlc2VhcmNofGVufDF8fHx8MTc3MTI1MTI0OHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Laboratory microscope research">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About the Project -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="text-center section-header">
+        <h2 class="section-title">How DIAL Works</h2>
+        <p class="section-subtitle">
+          Using deep learning to help detect Acute Lymphoblastic Leukemia cells and support medical professionals in earlier, faster identification.
+        </p>
+      </div>
+
+      <div class="grid-2 gap-large align-center mb-large">
+        <div>
+          <h3 class="content-title">The process</h3>
+          <div class="checklist">
+            <div class="checklist-item">
+              <div class="check-icon primary"><i data-lucide="check-circle-2"></i></div>
+              <span>Upload a microscopic image of blood cells.</span>
+            </div>
+            <div class="checklist-item">
+              <div class="check-icon primary"><i data-lucide="check-circle-2"></i></div>
+              <span>The AI model analyzes cell structure and morphology.</span>
+            </div>
+            <div class="checklist-item">
+              <div class="check-icon primary"><i data-lucide="check-circle-2"></i></div>
+              <span>Get an instant classification: healthy or leukemic cell.</span>
+            </div>
+            <div class="checklist-item">
+              <div class="check-icon primary"><i data-lucide="check-circle-2"></i></div>
+              <span>Review the confidence score and visual indicators.</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="card-image">
+            <img src="webpic2.png" alt="Medical technology">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2 gap-large align-center">
+        <div>
+          <div class="card-image">
+            <img src="web1pic.jpeg" alt="Blood cells science">
+          </div>
+        </div>
+
+        <div>
+          <h3 class="content-title">Why it matters</h3>
+          <div class="checklist">
+            <div class="checklist-item">
+              <div class="check-icon accent"><i data-lucide="check-circle-2"></i></div>
+              <span>Early detection meaningfully improves treatment outcomes.</span>
+            </div>
+            <div class="checklist-item">
+              <div class="check-icon accent"><i data-lucide="check-circle-2"></i></div>
+              <span>Shortens the time needed for an initial screening.</span>
+            </div>
+            <div class="checklist-item">
+              <div class="check-icon accent"><i data-lucide="check-circle-2"></i></div>
+              <span>Supports medical professionals throughout the diagnostic process.</span>
+            </div>
+            <div class="checklist-item">
+              <div class="check-icon accent"><i data-lucide="check-circle-2"></i></div>
+              <span>Demonstrates the potential of AI in real-world medical applications.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Sections -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="grid-2 gap-medium">
+        <a href="/info" class="cta-card">
+          <div class="cta-icon purple"><i data-lucide="book-open"></i></div>
+          <h3 class="cta-title">Learn More About ALL</h3>
+          <p class="cta-description">
+            Discover what Acute Lymphoblastic Leukemia is, its symptoms, treatment options, and why early detection matters.
+          </p>
+          <div class="cta-link">
+            <span>Explore Information</span>
+            <i data-lucide="arrow-right"></i>
+          </div>
+        </a>
+
+        <a href="/ai-tool" class="cta-card gradient">
+          <div class="cta-icon white"><i data-lucide="microscope"></i></div>
+          <h3 class="cta-title">AI Detection Tool</h3>
+          <p class="cta-description">
+            Analyze blood cell images with AI and get an instant classification with a confidence score.
+          </p>
+          <div class="cta-link">
+            <span>Try Detection Tool</span>
+            <i data-lucide="arrow-right"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="disclaimer-section">
+    <div class="container">
+      <div class="disclaimer-content">
+        <span class="disclaimer-label">Important Notice</span>
+        <p id="shenim">
+          This is a research prototype demonstrating an AI-assisted approach that could
+          be integrated into clinical platforms to help interpret hematological imaging.
+          It does not replace professional medical diagnosis, and it is not certified
+          for clinical use. For medical advice and diagnosis, always consult a qualified
+          healthcare professional.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© DIAL — AI-Powered Leukemia Detection</p>
+      <p>Student project · Intel® AI Global Impact Festival 2026</p>
+      <p style="max-width: 640px; margin: 10px auto 0; color: #94a3b8; font-size: 0.72rem; line-height: 1.5;">
+        This is a student research prototype, not a certified medical device. It is not
+        intended for clinical use, and must not be deployed publicly or used to inform
+        real patient care without review and approval by qualified medical and
+        regulatory authorities.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ========= DIAL Chatbot (demo) ========= -->
+  <div id="dial-chatbot-container" style="position: fixed; bottom: 30px; right: 30px; z-index: 10000; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+
+    <div id="chat-trigger" onclick="toggleDialChat()" style="background: linear-gradient(135deg, #439dc6 0%, #2980b9 100%); padding: 0 25px; height: 60px; border-radius: 30px; display: flex; align-items: center; justify-content: center; color: white; cursor: pointer; box-shadow: 0 10px 25px rgba(41, 128, 185, 0.4); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); gap: 12px; border: 2px solid rgba(255,255,255,0.2); position: relative;">
+      <div id="chat-icon-box" style="display: flex; align-items: center; justify-content: center;">
+        <i data-lucide="message-circle" id="icon-open-chat" style="width: 24px; height: 24px;"></i>
+        <i data-lucide="x" id="icon-close-chat" style="display:none; width: 24px; height: 24px;"></i>
+      </div>
+      <span id="chat-trigger-text" style="font-weight: 700; font-size: 0.9rem; letter-spacing: 0.5px; white-space: nowrap;">FAQ & HELP</span>
+    </div>
+
+    <div id="dial-chat-box" style="display: none; position: absolute; bottom: 85px; right: 0; width: 360px; height: 550px; background: white; border-radius: 25px; box-shadow: 0 20px 50px rgba(0,0,0,0.2); overflow: hidden; flex-direction: column; opacity: 0; transform: scale(0.9); transform-origin: bottom right; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid rgba(67, 157, 198, 0.1);">
+      <div style="background: linear-gradient(135deg, #439dc6 0%, #2980b9 100%); color: white; padding: 25px 20px; display: flex; align-items: center; gap: 15px;">
+        <div style="width: 45px; height: 45px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative;">
+          <i data-lucide="bot" style="width: 26px; height: 26px;"></i>
+          <div style="width: 12px; height: 12px; background: #2ecc71; border-radius: 50%; position: absolute; bottom: 0; right: 0; border: 2px solid #439dc6;"></div>
+        </div>
+        <div>
+          <div style="font-weight: 700; font-size: 1.1rem; line-height: 1.2;">DIAL Assistant</div>
+          <div style="font-size: 0.75rem; opacity: 0.9;">Online | AI Specialist</div>
+        </div>
+      </div>
+
+      <div id="dial-chat-messages" style="flex: 1; padding: 20px; overflow-y: auto; background: #f8faff; display: flex; flex-direction: column; gap: 15px;">
+        <div class="bot-msg-anim" style="align-self: flex-start; background: white; padding: 12px 16px; border-radius: 0 18px 18px 18px; font-size: 0.9rem; color: #444; box-shadow: 0 3px 10px rgba(0,0,0,0.04); max-width: 85%; line-height: 1.4; border: 1px solid #eef2f7;">
+          Hi! 👋 I'm your virtual assistant. Ask me anything about the DIAL project!
+        </div>
+        <div id="dial-typing" style="display: none; align-self: flex-start;">
+          <div style="display: flex; gap: 5px; background: #eee; padding: 10px 15px; border-radius: 15px;">
+            <div class="typing-dot"></div>
+            <div class="typing-dot" style="animation-delay: 0.2s;"></div>
+            <div class="typing-dot" style="animation-delay: 0.4s;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="dial-chat-footer" style="padding: 15px; background: white; border-top: 1px solid #f0f0f0;">
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <button onclick="handleDialAsk('What is ALL?', 'all')" class="dial-faq-btn">What is ALL?</button>
+          <button onclick="handleDialAsk('How does the AI work?', 'ai')" class="dial-faq-btn">How does it work?</button>
+          <button onclick="handleDialAsk('Main symptoms', 'simptomat')" class="dial-faq-btn">Symptoms of ALL</button>
+          <button onclick="handleDialAsk('Does it replace a doctor?', 'safety')" class="dial-faq-btn">AI safety</button>
+          <button onclick="handleDialAsk('How accurate is this tool?', 'accuracy')" class="dial-faq-btn">Accuracy</button>
+          <button onclick="handleDialAsk('How is this tool used?', 'usage')" class="dial-faq-btn">How to use it?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .dial-faq-btn { background: #f0f7ff; border: 1px solid #439dc6; color: #439dc6; padding: 8px 14px; border-radius: 20px; cursor: pointer; font-size: 0.75rem; font-weight: 600; transition: all 0.2s ease; }
+    .dial-faq-btn:hover { background: #439dc6; color: white; transform: translateY(-2px); }
+    .user-msg-anim { align-self: flex-end; background: #439dc6; color: white; padding: 12px 16px; border-radius: 18px 18px 0 18px; font-size: 0.9rem; max-width: 85%; box-shadow: 0 4px 12px rgba(67, 157, 198, 0.2); animation: dialSlideInRight 0.3s ease forwards; }
+    .bot-msg-anim { animation: dialSlideInLeft 0.3s ease forwards; }
+    @keyframes dialSlideInRight { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes dialSlideInLeft { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+    .typing-dot { width: 6px; height: 6px; background: #439dc6; border-radius: 50%; animation: dialBounce 1.4s infinite ease-in-out; }
+    @keyframes dialBounce { 0%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-6px); } }
+  </style>
+
+  <script>
+    function toggleDialChat() {
+      const chatBox = document.getElementById('dial-chat-box');
+      const triggerText = document.getElementById('chat-trigger-text');
+      const iconOpen = document.getElementById('icon-open-chat');
+      const iconClose = document.getElementById('icon-close-chat');
+
+      if (chatBox.style.display === 'none' || chatBox.style.opacity === '0') {
+        chatBox.style.display = 'flex';
+        setTimeout(() => { chatBox.style.opacity = '1'; chatBox.style.transform = 'scale(1)'; }, 10);
+        triggerText.innerText = "CLOSE";
+        iconOpen.style.display = 'none';
+        iconClose.style.display = 'block';
+      } else {
+        chatBox.style.opacity = '0';
+        chatBox.style.transform = 'scale(0.9)';
+        setTimeout(() => { chatBox.style.display = 'none'; }, 300);
+        triggerText.innerText = "FAQ & HELP";
+        iconOpen.style.display = 'block';
+        iconClose.style.display = 'none';
+      }
+    }
+
+    function handleDialAsk(question, type) {
+      const messageContainer = document.getElementById('dial-chat-messages');
+      const typingIndicator = document.getElementById('dial-typing');
+
+      messageContainer.innerHTML += `<div class="user-msg-anim">${question}</div>`;
+      messageContainer.appendChild(typingIndicator);
+      typingIndicator.style.display = 'block';
+      messageContainer.scrollTop = messageContainer.scrollHeight;
+
+      setTimeout(() => {
+        typingIndicator.style.display = 'none';
+        let reply = "";
+        switch(type) {
+          case 'all': reply = "Acute Lymphoblastic Leukemia (ALL) is a fast-developing cancer of the blood and bone marrow. It affects white blood cells (lymphocytes) and requires early diagnosis."; break;
+          case 'ai': reply = "The system uses a Convolutional Neural Network (CNN). It scans the cell image, looks for abnormalities in the nucleus and structure, and compares them against thousands of images it was trained on."; break;
+          case 'simptomat': reply = "Symptoms include fatigue, fever, easy bruising, and bone pain. Always consult a doctor for an accurate diagnosis!"; break;
+          case 'safety': reply = "No — this is a supportive tool for doctors, not a replacement for them. The final decision always belongs to the specialist. AI is meant to speed up screening and reduce human error, not to diagnose on its own."; break;
+          case 'accuracy': reply = "The model reached over 90% accuracy during training on the C-NMC dataset. Real-world performance can vary and has not been clinically validated."; break;
+          case 'usage': reply = "This application was designed exclusively as a support tool for doctors and laboratories, to help speed up analysis of microscopic images. For the general public, the platform is for informational purposes only, encouraging consultation with a specialist rather than self-diagnosis."; break;
+        }
+        messageContainer.innerHTML += `<div class="bot-msg-anim" style="align-self: flex-start; background: white; padding: 12px 16px; border-radius: 0 18px 18px 18px; font-size: 0.9rem; color: #444; box-shadow: 0 3px 10px rgba(0,0,0,0.04); max-width: 85%; line-height: 1.4; border-left: 4px solid #439dc6;">${reply}</div>`;
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+      }, 1200);
+    }
+
+    lucide.createIcons();
+  </script>
+</body>
+</html>
