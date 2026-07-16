@@ -1,4 +1,44 @@
-# DIAL — setup
+# DIAL — AI-Powered Leukemia Cell Detection
+
+**Student project · Intel® AI Global Impact Festival 2026**
+
+DIAL is a web application that uses a convolutional neural network to help identify Acute Lymphoblastic Leukemia (ALL) cells from microscopic blood smear images — built as an assistive tool for medical professionals.
+
+---
+
+## The Problem
+
+Acute Lymphoblastic Leukemia is the most common cancer in children, and it progresses
+quickly — early detection has a major impact on treatment outcomes and survival rates.
+Diagnosis today relies on trained specialists manually examining blood and bone marrow
+samples under a microscope, a process that is accurate but time-consuming and dependent
+on specialist availability, especially outside major hospitals.
+
+## Solution
+
+DIAL is a prototype clinical support tool: a doctor logs into a secure portal, uploads a
+microscopic image of a blood cell, and within seconds receives:
+- A classification (**Healthy** or **Leukemia (ALL)**)
+- A confidence score from the model
+- An explainability (XAI) report highlighting the morphological indicators behind the
+  prediction — so the result is a starting point for review, not a black-box answer
+
+The tool is designed to sit **alongside** a hematologist, speeding up preliminary
+screening rather than replacing clinical judgment.
+
+## How It Works
+
+1. A Convolutional Neural Network (CNN), built with TensorFlow/Keras, is trained on the
+   [C-NMC Leukemia dataset](https://competitions.codalab.org/competitions/20395) —
+   labeled microscopic images of healthy and leukemic (ALL) lymphocytes.
+2. The model learns to recognize morphological differences between healthy lymphocytes
+   and lymphoblasts (enlarged nucleus, irregular cell contour, altered cytoplasm ratio).
+3. A Flask web app serves the trained model behind a login-protected interface, so only
+   authorized medical staff can access the diagnostic tool.
+
+**Tech stack:** Python, TensorFlow/Keras, Flask, HTML/CSS/JS
+
+## Project Structure# DIAL — setup
 
 ```
 DIAL-App/
